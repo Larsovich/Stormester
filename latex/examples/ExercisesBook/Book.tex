@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{lambda}
+\usepackage{skak}
+\usepackage[cm]{fullpage}
+\usepackage{chessboard}
+
+\renewcommand{\figurename}{Exercise}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+\newcounter{ctProb}
+\setcounter{ctProb}{0}
+\newcommand{\problem}{%
+\addtocounter{ctProb}{1}%
+\paragraph{Exercise \arabic{ctProb}:}}
+
+\newcommand{\exercise}[2]{
+\begin{center}
+\fenboard{#1}
+\chessboard[setfen={#1},showmover]
+\vspace{-6pt}
+\problem {#2}
+\end{center}
+}
+\newcommand{\solution}[2]{
+\fenboard{#1}
+\problem {#2}
+% COMMENT
+}
+
+\begin{document}
+\author{Open Source Chess}
+\title{Chess Exercises}
+\date{}
+
+% \frontmatter
+\maketitle
+% \tableofcontents
+
+\mainmatter
+\setcounter{page}{3}
+\include{./Exercises}
+\include{./Solutions}
+
+
+
+
+
+% \backmatter
+% bibliography, glossary and index would go here.
+
+\end{document}
